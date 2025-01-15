@@ -1,38 +1,60 @@
-Netflix Show Clustering Project
-Overview
-Netflix is the world's largest online streaming service provider, with over 220 million subscribers as of Q2 2022. This project aims to enhance the user experience by clustering Netflix shows into meaningful groups. By identifying similarities between shows, we can offer personalized recommendations to users, ultimately improving customer satisfaction and reducing churn.
+# **Netflix Show Clustering**
 
-The primary goal is to classify Netflix shows into clusters where:
+## **Overview**
+Netflix is the world's largest online streaming service provider, with over 220 million subscribers as of Q2 2022. This project aims to enhance the user experience by clustering Netflix shows into meaningful groups based on their attributes. By analyzing similarities between shows, this clustering can be used to create personalized recommendations for users, improving satisfaction and reducing churn.
 
-Shows within a cluster share similar characteristics.
-Shows in different clusters are distinct.
-Project Goals
-Analyze Netflix show data to identify patterns and relationships.
-Cluster shows using attributes like director, cast, genre, country, and description.
-Visualize clusters to interpret similarities and differences.
-Provide insights to improve user recommendations on the platform.
-Attributes Used for Clustering
-The clustering process focuses on the following attributes:
+---
 
-Director: The individual(s) who directed the show.
-Cast: The actors involved in the show.
-Country: The country where the show was produced.
-Genres: The categories or genres of the show.
-Description: A brief summary of the show's storyline.
-Key Steps
-1. Data Preprocessing
-Combine selected attributes into a single column called clustering_attributes.
-Clean the text by removing non-ASCII characters, stopwords, and punctuation.
-Convert all text to lowercase.
-2. Embedding Generation Using Transformers
-Use the SentenceTransformer model (all-MiniLM-L6-v2) to convert textual data into dense vector embeddings.
-These embeddings capture semantic relationships between shows and are used as input for clustering.
-3. Dimensionality Reduction
-Apply Principal Component Analysis (PCA) to reduce the dimensionality of embeddings while retaining at least 80% of the variance.
-Simplifies clustering and improves computational efficiency.
-4. Clustering
-Use K-Means Clustering to group shows into distinct clusters.
-Evaluate clustering quality using the Silhouette Score.
-5. Visualization
-Visualize the clusters in 2D using PCA-reduced embeddings.
-Analyze each cluster's characteristics to interpret its composition.
+## **Features**
+- Analyze and preprocess Netflix show data.
+- Cluster shows into groups based on key attributes.
+- Visualize clusters for better understanding.
+- Utilize clustering for personalized recommendations.
+
+---
+
+## **Attributes Used**
+Clustering is performed using the following attributes:
+- **Director**: The individual(s) directing the show.
+- **Cast**: The actors featured in the show.
+- **Country**: The country of production.
+- **Genres**: The category/genre of the show.
+- **Description**: A short summary of the show.
+
+---
+
+## **Project Workflow**
+1. **Data Preprocessing**:
+   - Combine selected attributes into a single column.
+   - Clean data by removing non-ASCII characters, stopwords, and punctuation.
+   - Convert all text to lowercase.
+
+2. **Text Embedding with Transformers**:
+   - Use `SentenceTransformer` (`all-MiniLM-L6-v2`) to generate semantic embeddings for the text.
+
+3. **Dimensionality Reduction**:
+   - Apply PCA (Principal Component Analysis) to reduce dimensionality while retaining at least 80% of variance.
+
+4. **Clustering**:
+   - Perform K-Means clustering on the reduced embeddings.
+   - Evaluate cluster quality using the Silhouette Score.
+
+5. **Visualization**:
+   - Visualize clusters in 2D using PCA-reduced embeddings.
+   - Analyze cluster characteristics.
+
+---
+
+## **Technologies Used**
+- **Programming Language**: Python
+- **Key Libraries**:
+  - `pandas`, `numpy` for data preprocessing.
+  - `sentence-transformers` for generating embeddings.
+  - `scikit-learn` for PCA and clustering.
+  - `matplotlib`, `seaborn` for visualization.
+
+---
+
+
+
+

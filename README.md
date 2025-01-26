@@ -1,16 +1,15 @@
 # **Netflix Show Clustering**
 
 ## **Overview**
-Netflix is the world's largest online streaming service provider, with over 220 million subscribers as of Q2 2022. This project aims to enhance the user experience by clustering Netflix shows into meaningful groups based on their attributes. By analyzing similarities between shows, this clustering can be used to create personalized recommendations for users, improving satisfaction and reducing churn. Additionally, advanced techniques such as Support Vector Machines (SVM), Information Gain, Mutual Information (MI), and the Firefly Algorithm are integrated to optimize clustering and classification.
+Netflix is the world's largest online streaming service provider, with over 220 million subscribers as of Q2 2022. This project aims to enhance the user experience by clustering Netflix shows into meaningful groups based on their attributes. By analyzing similarities between shows, this clustering can be used to create personalized recommendations for users, improving satisfaction and reducing churn. Additionally, advanced techniques such as K-Means, Support Vector Machines (SVM), Information Gain, Mutual Information (MI), and the Firefly Algorithm are integrated to optimize clustering and classification.
 
 ---
 
 ## **Features**
 - Analyze and preprocess Netflix show data.
-- Cluster shows into groups based on key attributes.
+- Cluster shows into groups based on key attributes using K-Means and the Firefly Algorithm.
 - Classify shows using Support Vector Machines (SVM).
 - Optimize feature selection using Information Gain and Mutual Information (MI).
-- Improve clustering results with the Firefly Algorithm.
 - Visualize clusters and classification results for better understanding.
 - Utilize clustering for personalized recommendations.
 
@@ -42,8 +41,9 @@ Clustering and classification are performed using the following attributes:
 4. **Dimensionality Reduction**:
    - Apply PCA (Principal Component Analysis) to reduce dimensionality while retaining at least 80% of variance.
 
-5. **Clustering with Firefly Algorithm**:
-   - Perform clustering using the Firefly Algorithm to find optimal cluster centers.
+5. **Clustering**:
+   - Perform K-Means clustering to partition data into groups.
+   - Use the Firefly Algorithm to refine cluster centers for optimal grouping.
    - Evaluate cluster quality using the Silhouette Score.
 
 6. **Classification with SVM**:
@@ -61,7 +61,7 @@ Clustering and classification are performed using the following attributes:
 - **Key Libraries**:
   - `pandas`, `numpy` for data preprocessing.
   - `sentence-transformers` for generating embeddings.
-  - `scikit-learn` for PCA, clustering, classification, and feature selection.
+  - `scikit-learn` for PCA, clustering (K-Means), classification (SVM), and feature selection.
   - `matplotlib`, `seaborn` for visualization.
   - Custom implementation of the Firefly Algorithm.
 

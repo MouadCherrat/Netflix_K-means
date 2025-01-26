@@ -1,20 +1,23 @@
 # **Netflix Show Clustering**
 
 ## **Overview**
-Netflix is the world's largest online streaming service provider, with over 220 million subscribers as of Q2 2022. This project aims to enhance the user experience by clustering Netflix shows into meaningful groups based on their attributes. By analyzing similarities between shows, this clustering can be used to create personalized recommendations for users, improving satisfaction and reducing churn.
+Netflix is the world's largest online streaming service provider, with over 220 million subscribers as of Q2 2022. This project aims to enhance the user experience by clustering Netflix shows into meaningful groups based on their attributes. By analyzing similarities between shows, this clustering can be used to create personalized recommendations for users, improving satisfaction and reducing churn. Additionally, advanced techniques such as Support Vector Machines (SVM), Information Gain, Mutual Information (MI), and the Firefly Algorithm are integrated to optimize clustering and classification.
 
 ---
 
 ## **Features**
 - Analyze and preprocess Netflix show data.
 - Cluster shows into groups based on key attributes.
-- Visualize clusters for better understanding.
+- Classify shows using Support Vector Machines (SVM).
+- Optimize feature selection using Information Gain and Mutual Information (MI).
+- Improve clustering results with the Firefly Algorithm.
+- Visualize clusters and classification results for better understanding.
 - Utilize clustering for personalized recommendations.
 
 ---
 
 ## **Attributes Used**
-Clustering is performed using the following attributes:
+Clustering and classification are performed using the following attributes:
 - **Director**: The individual(s) directing the show.
 - **Cast**: The actors featured in the show.
 - **Country**: The country of production.
@@ -29,19 +32,27 @@ Clustering is performed using the following attributes:
    - Clean data by removing non-ASCII characters, stopwords, and punctuation.
    - Convert all text to lowercase.
 
-2. **Text Embedding with Transformers**:
+2. **Feature Selection with Information Gain and Mutual Information (MI)**:
+   - Calculate the importance of each feature based on Information Gain.
+   - Use Mutual Information to evaluate feature dependencies and select the most relevant features for clustering and classification.
+
+3. **Text Embedding with Transformers**:
    - Use `SentenceTransformer` (`all-MiniLM-L6-v2`) to generate semantic embeddings for the text.
 
-3. **Dimensionality Reduction**:
+4. **Dimensionality Reduction**:
    - Apply PCA (Principal Component Analysis) to reduce dimensionality while retaining at least 80% of variance.
 
-4. **Clustering**:
-   - Perform K-Means clustering on the reduced embeddings.
+5. **Clustering with Firefly Algorithm**:
+   - Perform clustering using the Firefly Algorithm to find optimal cluster centers.
    - Evaluate cluster quality using the Silhouette Score.
 
-5. **Visualization**:
+6. **Classification with SVM**:
+   - Train an SVM classifier using labeled data.
+   - Use the classifier to assign labels to new shows.
+
+7. **Visualization**:
    - Visualize clusters in 2D using PCA-reduced embeddings.
-   - Analyze cluster characteristics.
+   - Analyze cluster and classification characteristics.
 
 ---
 
@@ -50,11 +61,8 @@ Clustering is performed using the following attributes:
 - **Key Libraries**:
   - `pandas`, `numpy` for data preprocessing.
   - `sentence-transformers` for generating embeddings.
-  - `scikit-learn` for PCA and clustering.
+  - `scikit-learn` for PCA, clustering, classification, and feature selection.
   - `matplotlib`, `seaborn` for visualization.
+  - Custom implementation of the Firefly Algorithm.
 
 ---
-
-
-
-
